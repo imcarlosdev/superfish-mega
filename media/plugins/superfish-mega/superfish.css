@@ -1,0 +1,203 @@
+/* ========================================================
+			   CORE SUPERFISH PLUGIN STYLES
+   ========================================================
+*/
+.sf-menu, .sf-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.sf-menu li {
+  position: relative; }
+
+.sf-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99; }
+
+.sf-menu > li {
+  float: left; }
+
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+  display: block; }
+
+.sf-menu a {
+  display: block;
+  position: relative; }
+
+.sf-menu ul ul {
+  top: 0;
+  left: 100%; }
+
+/* ========================================================
+						 CUSTOM SKIN 
+   ========================================================
+*/
+/* ===== [ALL NORMAL STATE STYLES (un-hovered)] ===== */
+.sf-menu {
+  float: left;
+  margin-bottom: 1em; }
+
+.sf-menu ul {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  min-width: 12em;
+  /* allow long menu items to determine submenu width */
+  width: 12em;
+  /* no auto sub width for IE7, see white-space comment below */
+  border-radius: 2px; }
+
+.sf-menu a {
+  font-size: 0.85em;
+  /* ===== [ALL 'a'] FONT-SIZE ALL LINKS=====*/
+  padding: .45em 1.2em;
+  /* ===== [ALL 'a'] PADDING ALL LINKS =====*/
+  text-decoration: none;
+  zoom: 1;
+  /* IE7 */
+  color: black;
+  /* ===== [MAIN 'a'] MAIN COLOUR MENU LINKS ===== */ }
+
+.sf-menu li {
+  white-space: nowrap;
+  /* no need for Supersubs plugin */
+  *white-space: normal;
+  /* ...unless you support IE7 (let it wrap) */
+  -webkit-transition: none;
+  /* ===== [ALL 'li'] BACKGROUND FADE TRANSITION ===== */
+  transition: none;
+  /* ===== [ALL 'li'] BACKGROUND FADE TRANSITION ===== */ }
+
+/* Active link */
+.sf-menu li.active a {
+  border: none;
+  /* ===== [ACTIVE 'a'] BORDER ===== */
+  border-radius: 2px;
+  /* ===== [ACTIVE 'a'] BORDER RADIUS ===== */
+  background: #5292fc;
+  /* ===== [ACTIVE 'a'] BACKGROUND ITEM ACTIVE ===== */
+  color: white;
+  /* ===== [ACTIVE 'a'] COLOUR ITEM ACTIVE ===== */ }
+
+.sf-menu li.active.sfHover a {
+  border: none;
+  /* ===== [ACTIVE 'a' with submenu] BORDER ===== */
+  border-radius: 2px;
+  /* ===== [ACTIVE 'a' with submenu] BORDER RADIUS ===== */
+  color: #FFF;
+  /* ===== [ACTIVE 'a' with submenu] COLOUR ITEM ACTIVE ===== */
+  background: none;
+  box-shadow: none; }
+
+/*Submenus color (2nd level)*/
+.sf-menu ul li {
+  background: #e95c72;
+  /* ===== [FIRST CHILD SUBMENU 'li'] SUBMENU BACKGROUND COLOUR ===== */ }
+
+.sf-menu li.sfHover a {
+  color: #FFF;
+  /* ===== [ALL SUBMENUS NORMAL STATE 'a'] TEXT COLOUR ===== */ }
+
+.sf-menu li ul li.sfHover > a {
+  color: black;
+  /* ===== [FIRST CHILD LINK WITH SUBMENU ROLLOUT 'a'] ROLLOUT TEXT COLOUR ===== */ }
+
+/*Submenu color (3rd level)*/
+.sf-menu ul ul li {
+  background: #e95c72;
+  /* ===== [SECOND CHILD SUBMENU 'li'] BACKGROUND COLOUR ===== */ }
+
+/* ===== [ALL :HOVER STATE STYLES (hovered)] ===== */
+/* color :hover (all levels) */
+.sf-menu li:hover,
+.sf-menu li.sfHover {
+  background: #f2f2f2;
+  /* ===== [ALL 'li' :HOVER] BACKGROUND COLOUR ===== */ }
+
+.sf-menu li.sfHover li a:hover {
+  color: black;
+  /* ===== [ALL SUBMENUS 'a' :HOVER] TEXT COLOUR ===== */ }
+
+/*Just li elements direct childrens of main menu (1st level)*/
+.sf-menu > li {
+  border-radius: 2px;
+  /* ===== [MAIN 'li'] BORDER RADIUS =====*/
+  margin: 0 5px;
+  /* ===== [MAIN 'li'] BESIDES MARGIN =====*/ }
+
+.sf-menu li ul > li:first-child {
+  border-radius: 0 2px 0 0; }
+
+.sf-menu li ul > li:last-child {
+  border-radius: 0 0 2px 2px; }
+
+/*:hover Colour of the menu that contains submenu*/
+.sf-menu > li.sfHover {
+  background: #e95c72;
+  /* ===== [MAIN LINK WITH SUBMENU 'li'] BACKGROUND COLOUR ===== */
+  border-radius: 2px 2px 0 0; }
+
+/* ===== [ARROWS (for all except IE7)] ===== */
+.sf-arrows .sf-with-ul {
+  padding-right: 2.5em;
+  *padding-right: 1em;
+  /* no CSS arrows for IE7 (lack pseudo-elements) */ }
+
+/* styling for both css and generated arrows */
+.sf-arrows .sf-with-ul:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  margin-top: -3px;
+  height: 0;
+  width: 0;
+  /* order of following 3 rules important for fallbacks to work */
+  border: 5px solid transparent;
+  /*border-top-color: #DFEEFF; /* edit this to suit design (no rgba in IE8) */
+  border-top-color: #666; }
+
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+  border-top-color: #666;
+  /* IE8 fallback colour */ }
+
+/* styling for right-facing arrows (submenu) */
+.sf-arrows ul .sf-with-ul:after {
+  margin-top: -5px;
+  margin-right: -3px;
+  border-color: transparent;
+  /*border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+  border-left-color: #666; }
+
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+  border-left-color: #666; }
+
+/* ========================================================
+					SUPERFISH + MEGAMENU
+   ========================================================
+*/
+/*Mega-menu + Superfish*/
+.sf-menu > li {
+  display: inline-block !important;
+  float: none !important;
+  text-align: left; }
+
+#mega-menu-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  float: left; }
+
+.mega-menu {
+  display: none;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  position: absolute;
+  width: 100%;
+  z-index: 1; }

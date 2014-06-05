@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Superfish Mega - Custom by @choquo</title>
+    
+    <script src="media/js/jquery-1.9.1.min.js"></script><!-- jQuery -->
+    <link rel="stylesheet" href="media/plugins/superfish-mega/superfish.css">
+    <script src="media/plugins/superfish-mega/superfish.min.js"></script><!-- Submenus --> 
+    <!-- ==================================================
+                           Menu superfish
+         ================================================== -->
+        <!-- Menu superfish -->
+        <script>
+        $(function(){ 
+            $("#nav").superfish({
+                animation:     {opacity:'show', height:'show'},
+                animationOut:  {opacity:'hide', height:'hide'},
+                delay: 0,
+                cssArrows: true,
+                speed: 0,
+                speedOut: 0,
+                disableHI: true
+            }); 
+        });
+        </script>
+</head>
+<body>
+	<!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div id="nav-wrapper" class="col-lg-8">
+                    <nav>
+                        <ul id="nav" class="sf-menu">
+                            <li class="active has-mega"><a title=""  href="#">MADERAS</a></li>
+
+                            <li><a title=""  href="#">SERVICIOS</a>
+                                <ul>
+                                    <li><a title=""  href="#">Consultoría</a></li>
+                                    <li><a title=""  href="#">Desarrollo</a>
+                                        <ul>
+                                            <li><a title=""  href="#">Software</a></li>
+                                            <li><a title=""  href="#">Web Apps</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a title=""  href="#">Implementación</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-mega" data-mega-id="1"><a title=""  href="#">ACABADOS</a></li>
+                            <li class="has-mega" data-mega-id="2"><a title=""  href="#">OTROS</a></li>
+                            <li class="has-mega"><a title=""  href="#">CLIENTES</a></li>
+                            <li><a title=""  href="#">NOSOTROS</a></li>
+                            <li><a title=""  href="#">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Mega menus -->
+                <div id="mega-menu-wrapper">
+                    <div id="mega-id-1" class="mega-menu">
+                        <h1>acabados</h1>        
+                    </div>
+                    <div id="mega-id-2" class="mega-menu">
+                        <h1>Otros</h1>        
+                    </div>
+                </div>
+                <!-- end Mega menus -->
+
+            </div>
+        </div>
+    </header>
+	<!-- END HEADER -->
+
+</body>
+</html>
